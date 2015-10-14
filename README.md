@@ -10,7 +10,7 @@ Using `C` style macro and string, it's simple and easy. No more hassle, no more 
 
 Use macro `EF_MSG` to define a macro and message pair:
 
-```
+```c
 DEF_MSG(CODE_OK,   "OK!")
 DEF_MSG(CODE_FAIL, "Fail!")
 ```
@@ -19,7 +19,7 @@ DEF_MSG(CODE_FAIL, "Fail!")
 
 Use `get_message()` to get the message:
 
-```
+```c
 get_message(CODE_FAIL);  // will return "Fail!"
 ```
 
@@ -27,7 +27,7 @@ Use `MSG_NUM` to find out how many macros have been defined. This will automatic
 
 Predefined messages:
 
-```
+```c
 MSG_OK:     OK!
 MSG_BOTTOM: Message bottom
 ```
@@ -48,19 +48,19 @@ You can refer to the example project for real world usage.
 
 Every definition file should include `message_inc.h` to use the `DEF_MSG` macro.
 
-```
+```c
 #include <message_inc.h>
 ```
 
 Then define some CODE-MESSAGEs:
 
-```
+```c
 DEF_MSG(JUST_SAY_HI, "Hi!")
 ```
 
 Messages with a prefix:
 
-```
+```c
 #define MSG_HEAD_HELLO  "Hello: "
 
 DEF_MSG(HELLO_WORLD, MSG_HEAD_HELLO "world!")
@@ -77,7 +77,7 @@ Create a header file with any name you like, e.g., `message_hello.h`.
 
 Include the definition header files in it:
 
-```
+```c
 #include "message_hello.h"
 ...
 #include "message_anything.h"
@@ -88,7 +88,8 @@ Include the definition header files in it:
 CMake needs to know where your entry header file is, define variable `CODE_MESSAGE_ENTRY` to do this.
 
 For example:
-```
+
+```cmake
 set(CODE_MESSAGE_ENTRY "path/to/message_all.h")
 ```
 
@@ -96,7 +97,7 @@ set(CODE_MESSAGE_ENTRY "path/to/message_all.h")
 
 Just include one header file:
 
-```
+```c
 #include <message_def.h>
 ```
 
@@ -106,7 +107,7 @@ Then you get access to all the macros and `get_message()` function.
 
 ## Compile example
 
-```
+```bash
 mkdir build
 cd build
 cmake -DBUILD_EXAMPLE=ON ..
