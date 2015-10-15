@@ -8,7 +8,7 @@ Using `C` style macro and string, it's simple and easy. No more hassle, no more 
 
 ## Usage:
 
-Use macro `EF_MSG` to define a macro and message pair:
+Use macro `DEF_MSG` to define a macro and message pair:
 
 ```c
 DEF_MSG(CODE_OK,   "OK!")
@@ -17,10 +17,11 @@ DEF_MSG(CODE_FAIL, "Fail!")
 
 `CODE_OK` is the macro to use, and `"OK!"` is the corresponding message.
 
-Use `get_message()` to get the message:
+Use `get_message()` or just `gm()` to get the message:
 
 ```c
 get_message(CODE_FAIL);  // will return "Fail!"
+gm(CODE_FAIL);           // works exactly the same as above
 ```
 
 Use `MSG_NUM` to find out how many macros have been defined. This will automatically increse, you don't need to do anything.
