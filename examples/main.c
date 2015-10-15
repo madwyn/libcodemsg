@@ -8,11 +8,11 @@ MSG_CODE get_my_message(void) {
 }
 
 int main() {
-    printf(get_message(JUST_SAY_HI));
+    printf(gm(JUST_SAY_HI));
     printf("\n");
-    printf(get_message(HELLO_WORLD));
+    printf(gm(HELLO_WORLD));
     printf("\n");
-    printf(get_message(get_my_message()));
+    printf(gm(get_my_message()));
     printf("\n");
     return 0;
 }

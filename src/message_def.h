@@ -22,4 +22,6 @@ COMMON_MESSAGE_EXPORT const char* get_message(MSG_CODE code);
 }
 #endif
 
+#define gm(code) get_message(code)
+
 #endif
