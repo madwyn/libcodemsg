@@ -29,7 +29,7 @@ Use `MSG_NUM` to find out how many macros have been defined. This will automatic
 Predefined messages:
 
 ```c
-MSG_OK:     OK!
+MSG_OK:     OK
 MSG_BOTTOM: Message bottom
 ```
 
